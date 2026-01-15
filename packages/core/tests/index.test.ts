@@ -115,7 +115,7 @@ describe('@ironbackend/core', () => {
 
     describe('version', () => {
         it('should export VERSION', () => {
-            expect(VERSION).toBe('1.0.0');
+            expect(VERSION).toBe('1.0.1');
         });
     });
 });
