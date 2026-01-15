@@ -13,10 +13,10 @@ A senior backend architect embedded inside your AI, installable via npm. IronBac
 
 ```bash
 # Install globally
-npm install -g ironbackend
+npm install -g @ironbackend/cli
 
 # Or use with npx
-npx ironbackend init cursor
+npx @ironbackend/cli init cursor
 ```
 
 ## Quick Start

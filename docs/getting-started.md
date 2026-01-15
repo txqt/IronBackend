@@ -13,19 +13,19 @@ This guide walks you through setting up IronBackend in your project and integrat
 ### Global Installation (Recommended)
 
 ```bash
-npm install -g ironbackend
+npm install -g @ironbackend/cli
 ```
 
 ### Per-Project Installation
 
 ```bash
-npm install -D ironbackend
+npm install -D @ironbackend/cli
 ```
 
 ### Using npx (No Installation)
 
 ```bash
-npx ironbackend init
+npx @ironbackend/cli init
 ```
 
 ## Step 1: Initialize

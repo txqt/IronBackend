@@ -100,7 +100,7 @@ getWarnRules(): DesignRule[]
 
 ## Related Packages
 
-- [`ironbackend`](https://www.npmjs.com/package/ironbackend) - CLI tool
+- [`@ironbackend/cli`](https://www.npmjs.com/package/@ironbackend/cli) - CLI tool
 - [`@ironbackend/prompts`](https://www.npmjs.com/package/@ironbackend/prompts) - Prompt builders
 
 ## License

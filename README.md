@@ -6,7 +6,7 @@
 
 **Backend Architecture Intelligence for AI Coding Assistants**
 
-[![npm version](https://img.shields.io/npm/v/ironbackend)](https://www.npmjs.com/package/ironbackend)
+[![npm version](https://img.shields.io/npm/v/@ironbackend/cli)](https://www.npmjs.com/package/@ironbackend/cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
@@ -53,10 +53,10 @@ Modern AI coding assistants lack structured backend architectural knowledge:
 
 ```bash
 # Install globally
-npm install -g ironbackend
+npm install -g @ironbackend/cli
 
 # Or use with npx
-npx ironbackend init cursor
+npx @ironbackend/cli init cursor
 ```
 
 ### Initialize for Your AI Tool
@@ -212,7 +212,7 @@ in Hexagonal Architecture using Python/FastAPI.
 
 | Package | npm | Description |
 |---------|-----|-------------|
-| `ironbackend` | [![npm](https://img.shields.io/npm/v/ironbackend)](https://www.npmjs.com/package/ironbackend) | CLI tool |
+| `@ironbackend/cli` | [![npm](https://img.shields.io/npm/v/@ironbackend/cli)](https://www.npmjs.com/package/@ironbackend/cli) | CLI tool |
 | `@ironbackend/core` | [![npm](https://img.shields.io/npm/v/@ironbackend/core)](https://www.npmjs.com/package/@ironbackend/core) | Styles, rules, stacks |
 | `@ironbackend/prompts` | [![npm](https://img.shields.io/npm/v/@ironbackend/prompts)](https://www.npmjs.com/package/@ironbackend/prompts) | Prompt templates |
 

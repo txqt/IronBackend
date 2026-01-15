@@ -107,7 +107,7 @@ Hexagonal Architecture with Node.js/NestJS.
 
 ## Related Packages
 
-- [`ironbackend`](https://www.npmjs.com/package/ironbackend) - CLI tool
+- [`@ironbackend/cli`](https://www.npmjs.com/package/@ironbackend/cli) - CLI tool
 - [`@ironbackend/core`](https://www.npmjs.com/package/@ironbackend/core) - Knowledge base
 
 ## License
