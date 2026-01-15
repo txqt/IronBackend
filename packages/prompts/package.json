@@ -1,6 +1,7 @@
 {
     "name": "@ironbackend/prompts",
     "version": "1.0.0",
+    "type": "module",
     "description": "AI prompt templates for IronBackend",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

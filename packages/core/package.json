@@ -1,6 +1,7 @@
 {
     "name": "@ironbackend/core",
     "version": "1.0.0",
+    "type": "module",
     "description": "Backend architecture styles, rules, stacks, and security playbooks",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

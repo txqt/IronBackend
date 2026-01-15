@@ -71,10 +71,23 @@ export {
     formatSecurityForPrompt,
 } from './security/index.js';
 
+import { createRequire } from 'module';
+
 /**
- * IronBackend version
+ * IronBackend version - dynamically read from package.json
  */
-export const VERSION = '1.0.0';
+const getVersion = (): string => {
+    try {
+        const require = createRequire(import.meta.url);
+        const pkg = require('../package.json');
+        return pkg.version;
+    } catch {
+        // Fallback for edge cases
+        return '1.0.0';
+    }
+};
+
+export const VERSION = getVersion();
 
 import * as _styles from './styles/index.js';
 import * as _stacks from './stacks/index.js';

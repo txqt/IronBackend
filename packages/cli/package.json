@@ -1,6 +1,7 @@
 {
     "name": "ironbackend",
     "version": "1.0.0",
+    "type": "module",
     "description": "Backend Architecture Intelligence CLI for AI Coding Assistants",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
