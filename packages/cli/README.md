@@ -1,8 +1,8 @@
-# ironbackend
+# @ironbackend/cli
 
 Backend Architecture Intelligence CLI for AI Coding Assistants.
 
-[![npm version](https://img.shields.io/npm/v/ironbackend)](https://www.npmjs.com/package/ironbackend)
+[![npm version](https://img.shields.io/npm/v/@ironbackend/cli)](https://www.npmjs.com/package/@ironbackend/cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../../LICENSE)
 
 ## What is IronBackend?

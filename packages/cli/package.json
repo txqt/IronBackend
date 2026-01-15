@@ -1,5 +1,5 @@
 {
-    "name": "ironbackend",
+    "name": "@ironbackend/cli",
     "version": "1.0.1",
     "type": "module",
     "description": "Backend Architecture Intelligence CLI for AI Coding Assistants",
