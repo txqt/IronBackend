@@ -1,0 +1,56 @@
+{
+    "name": "@ironbackend/core",
+    "version": "1.0.0",
+    "description": "Backend architecture styles, rules, stacks, and security playbooks",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./styles": {
+            "types": "./dist/styles/index.d.ts",
+            "import": "./dist/styles/index.js"
+        },
+        "./stacks": {
+            "types": "./dist/stacks/index.d.ts",
+            "import": "./dist/stacks/index.js"
+        },
+        "./rules": {
+            "types": "./dist/rules/index.d.ts",
+            "import": "./dist/rules/index.js"
+        },
+        "./security": {
+            "types": "./dist/security/index.d.ts",
+            "import": "./dist/security/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest run",
+        "clean": "rm -rf dist"
+    },
+    "keywords": [
+        "backend",
+        "architecture",
+        "ai",
+        "coding-assistant",
+        "patterns",
+        "design-rules"
+    ],
+    "author": "IronBackend Contributors",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ironbackend/ironbackend.git",
+        "directory": "packages/core"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.0"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "ironbackend",
+    "version": "1.0.0",
+    "description": "Backend Architecture Intelligence CLI for AI Coding Assistants",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "bin": {
+        "ironbackend": "./bin/ironbackend.js"
+    },
+    "files": [
+        "dist",
+        "bin"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "vitest run",
+        "clean": "rm -rf dist",
+        "dev": "tsx src/index.ts"
+    },
+    "keywords": [
+        "backend",
+        "architecture",
+        "cli",
+        "ai",
+        "cursor",
+        "claude",
+        "copilot"
+    ],
+    "author": "IronBackend Contributors",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ironbackend/ironbackend.git",
+        "directory": "packages/cli"
+    },
+    "dependencies": {
+        "@ironbackend/core": "workspace:*",
+        "@ironbackend/prompts": "workspace:*",
+        "commander": "^11.1.0",
+        "chalk": "^5.3.0",
+        "inquirer": "^9.2.0",
+        "ora": "^8.0.0"
+    },
+    "devDependencies": {
+        "@types/inquirer": "^9.0.0",
+        "typescript": "^5.3.0",
+        "tsx": "^4.7.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
