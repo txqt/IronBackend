@@ -14,7 +14,7 @@ We take the security of IronBackend seriously. If you believe you have found a s
 
 **Please do NOT report security vulnerabilities through public GitHub issues.**
 
-Instead, please send an email to: **security@ironbackend.dev** (or create a private security advisory on GitHub)
+Instead, please send an email to: **cv.hovanthanh@gmail.com** (or create a private security advisory on GitHub)
 
 Include the following information in your report:
 - Type of vulnerability (e.g., code injection, data exposure, etc.)
