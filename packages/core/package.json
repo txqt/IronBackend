@@ -51,6 +51,9 @@
         "url": "https://github.com/ironbackend/ironbackend.git",
         "directory": "packages/core"
     },
+    "dependencies": {
+        "zod": "^3.22.0"
+    },
     "devDependencies": {
         "typescript": "^5.3.0"
     }

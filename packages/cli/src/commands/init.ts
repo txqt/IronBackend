@@ -9,25 +9,24 @@ import * as path from 'path';
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 import ora from 'ora';
-import { getStyleIds, getStackIds, getStyle, getStack, VERSION } from '@ironbackend/core';
+import {
+    getStyleIds,
+    getStackIds,
+    getStyle,
+    getStack,
+    VERSION,
+    safeValidateLocalConfig,
+    formatValidationError
+} from '@ironbackend/core';
 import { buildPromptSections } from '@ironbackend/prompts';
 import { AI_TOOLS, getAITool, getAIToolIds, formatForAITool, type AIToolConfig } from '../ai-tools.js';
+import { log } from '../utils/logger.js';
+// Note: sanitizeFilePath and sanitizeInput available in ../utils/validation.js for future use
 
 const IRONBACKEND_DIR = '.ironbackend';
 const CONFIG_FILE = 'config.json';
 
-interface IronBackendLocalConfig {
-    version: string;
-    tool: string | null;
-    style: string | null;
-    stack: string | null;
-    rules: {
-        enabled: string[];
-        overrides: Record<string, string>;
-    };
-    createdAt: string;
-    updatedAt: string;
-}
+// Using ValidatedLocalConfig from @ironbackend/core instead of local interface
 
 /**
  * Create the init command
@@ -153,7 +152,7 @@ async function runInit(toolArg: string | undefined, options: { yes?: boolean; st
         fs.mkdirSync(path.join(ironbackendPath, 'prompts'), { recursive: true });
 
         // Create config file
-        const config: IronBackendLocalConfig = {
+        const config = {
             version: VERSION,
             tool: selectedTool.id,
             style: selectedStyle,
@@ -166,9 +165,22 @@ async function runInit(toolArg: string | undefined, options: { yes?: boolean; st
             updatedAt: new Date().toISOString()
         };
 
+        // Validate config before writing
+        log.debug('Validating configuration', { config });
+        const validationResult = safeValidateLocalConfig(config);
+
+        if (!validationResult.success) {
+            spinner.fail('Configuration validation failed');
+            console.error(chalk.red('Invalid configuration:'));
+            console.error(chalk.yellow(formatValidationError(validationResult.error)));
+            process.exit(1);
+        }
+
+        log.info('Configuration validated successfully', { version: config.version });
+
         fs.writeFileSync(
             path.join(ironbackendPath, CONFIG_FILE),
-            JSON.stringify(config, null, 2)
+            JSON.stringify(validationResult.data, null, 2)
         );
 
         // Generate prompts if style and stack are selected

@@ -185,4 +185,67 @@ export interface IronBackendConfig {
         authStrategy?: AuthStrategy;
         authorizationModel?: AuthorizationModel;
     };
+    plugins?: string[];
 }
+
+// ============================================================================
+// Plugin System
+// ============================================================================
+
+/**
+ * Plugin interface for extending IronBackend
+ * Allows adding custom styles, stacks, and rules
+ */
+export interface IronBackendPlugin {
+    /** Unique plugin identifier */
+    name: string;
+    /** Plugin version (semver) */
+    version: string;
+    /** Human-readable description */
+    description?: string;
+    /** Custom architecture styles */
+    styles?: ArchitectureStyle[];
+    /** Custom tech stacks */
+    stacks?: TechStack[];
+    /** Custom design rules */
+    rules?: DesignRule[];
+    /** Lifecycle hook: called when plugin is loaded */
+    onLoad?: () => void | Promise<void>;
+    /** Lifecycle hook: called when plugin is unloaded */
+    onUnload?: () => void | Promise<void>;
+}
+
+/**
+ * Plugin metadata for the registry
+ */
+export interface PluginMetadata {
+    name: string;
+    version: string;
+    description?: string;
+    path: string;
+    enabled: boolean;
+    loadedAt?: Date;
+}
+
+/**
+ * Plugin registry for managing loaded plugins
+ */
+export interface PluginRegistry {
+    /** All registered plugins */
+    plugins: Map<string, IronBackendPlugin>;
+    /** Plugin metadata */
+    metadata: Map<string, PluginMetadata>;
+    /** Register a new plugin */
+    register: (plugin: IronBackendPlugin, path: string) => void;
+    /** Unregister a plugin by name */
+    unregister: (name: string) => boolean;
+    /** Get a plugin by name */
+    get: (name: string) => IronBackendPlugin | undefined;
+    /** Get all styles from plugins */
+    getAllStyles: () => ArchitectureStyle[];
+    /** Get all stacks from plugins */
+    getAllStacks: () => TechStack[];
+    /** Get all rules from plugins */
+    getAllRules: () => DesignRule[];
+}
+

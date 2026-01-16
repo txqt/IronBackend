@@ -10,6 +10,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Nothing yet
 
+## [1.0.1] - 2026-01-16
+
+### Added
+- **Validation & Security**:
+  - Runtime configuration schema validation using Zod
+  - Security utilities for input sanitization and path traversal prevention
+  - `init` command now validates config before writing
+- **Observability**:
+  - Structured JSON logging with Pino (pretty-printed in dev)
+  - Detailed error reporting for validation failures
+- **Testing**:
+  - Comprehensive CLI integration test suite
+  - Unit tests for internal utilities
+- **Architecture**:
+  - Configuration migration system implementation
+  - Plugin system interfaces for future extensibility
+
 ## [1.0.0] - 2026-01-15
 
 ### Added

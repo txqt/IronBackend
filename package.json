@@ -14,13 +14,16 @@
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "clean": "pnpm -r clean",
-    "prepare": "pnpm build"
+    "prepare": "pnpm build",
+    "docs": "typedoc"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",
     "typescript": "^5.3.0",
     "vitest": "^1.0.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "typedoc": "^0.25.0",
+    "typedoc-plugin-markdown": "^3.17.0"
   },
   "engines": {
     "node": ">=18.0.0",

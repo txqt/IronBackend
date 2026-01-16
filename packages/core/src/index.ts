@@ -12,6 +12,9 @@
 // Types
 export * from './types.js';
 
+// Schema Validation
+export * from './schema.js';
+
 // Architecture Styles
 export * as styles from './styles/index.js';
 export {

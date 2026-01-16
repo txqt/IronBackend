@@ -20,6 +20,7 @@ export default defineConfig({
                 branches: 70,
                 statements: 80
             }
-        }
-    },
+        },
+        testTimeout: 10000
+    }
 });

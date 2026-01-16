@@ -35,9 +35,58 @@ jobs:
       - name: Build
         run: pnpm build
       
-      - name: Test
-        run: pnpm -r --filter "@ironbackend/core" test
+      - name: Test with Coverage
+        run: pnpm -r test -- --coverage
+      
+      - name: Check Coverage Threshold
+        run: |
+          # Extract coverage percentage from core package
+          COVERAGE=$(cat packages/core/coverage/coverage-summary.json 2>/dev/null | jq '.total.lines.pct' || echo "0")
+          echo "Coverage: ${COVERAGE}%"
+          if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+            echo "::warning::Coverage ${COVERAGE}% is below 80% threshold"
+          fi
+      
+      - name: Type Check
+        run: pnpm -r exec tsc --noEmit
       
       - name: Lint
         run: npx eslint .
         continue-on-error: true
+
+  quality:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build
+        run: pnpm build
+      
+      - name: Bundle Size Check
+        run: |
+          # Check CLI bundle size
+          CLI_SIZE=$(du -sb packages/cli/dist | cut -f1)
+          CLI_SIZE_MB=$(echo "scale=2; $CLI_SIZE / 1048576" | bc)
+          echo "CLI bundle size: ${CLI_SIZE_MB}MB"
+          
+          # Warn if bundle exceeds 5MB
+          if (( $(echo "$CLI_SIZE > 5242880" | bc -l) )); then
+            echo "::warning::CLI bundle size ${CLI_SIZE_MB}MB exceeds 5MB threshold"
+          fi

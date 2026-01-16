@@ -1,0 +1,10 @@
+{
+    "entryPoints": [
+        "packages/core/src/index.ts"
+    ],
+    "out": "docs/api-core",
+    "name": "IronBackend Core API",
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeExternals": true
+}

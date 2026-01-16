@@ -10,6 +10,7 @@ import { eventDriven, cqrs } from './event-driven.js';
 import { microservicesSync, microservicesAsync } from './microservices.js';
 import { serverless, readHeavy, automation } from './specialized.js';
 import type { ArchitectureStyle } from '../types.js';
+import { memoize } from '../utils/performance.js';
 
 /**
  * All available architecture styles
@@ -28,11 +29,11 @@ export const styles: Record<string, ArchitectureStyle> = {
 };
 
 /**
- * Get a style by ID
+ * Get a style by ID (memoized for performance)
  */
-export function getStyle(id: string): ArchitectureStyle | undefined {
+export const getStyle = memoize((id: string): ArchitectureStyle | undefined => {
     return styles[id];
-}
+});
 
 /**
  * Get all style IDs

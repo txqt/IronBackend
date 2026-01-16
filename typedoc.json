@@ -1,0 +1,21 @@
+{
+    "entryPoints": [
+        "packages/core/src/index.ts",
+        "packages/prompts/src/index.ts"
+    ],
+    "out": "docs/api",
+    "name": "IronBackend API Documentation",
+    "readme": "README.md",
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeExternals": true,
+    "includeVersion": true,
+    "navigationLinks": {
+        "GitHub": "https://github.com/ironbackend/ironbackend",
+        "npm": "https://www.npmjs.com/package/ironbackend"
+    },
+    "plugin": [
+        "typedoc-plugin-markdown"
+    ],
+    "theme": "default"
+}
