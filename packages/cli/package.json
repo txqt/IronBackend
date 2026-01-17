@@ -1,6 +1,6 @@
 {
     "name": "@ironbackend/cli",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "description": "Backend Architecture Intelligence CLI for AI Coding Assistants",
     "main": "./dist/index.js",
@@ -31,7 +31,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ironbackend/ironbackend.git",
+        "url": "https://github.com/txqt/IronBackend.git",
         "directory": "packages/cli"
     },
     "dependencies": {
@@ -47,9 +47,10 @@
     },
     "devDependencies": {
         "@types/inquirer": "^9.0.0",
+        "@vitest/coverage-v8": "^4.0.17",
         "typescript": "^5.3.0",
         "tsx": "^4.7.0",
-        "vitest": "^1.0.0"
+        "vitest": "^4.0.17"
     },
     "engines": {
         "node": ">=18.0.0"

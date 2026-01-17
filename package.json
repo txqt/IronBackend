@@ -1,13 +1,13 @@
 {
   "name": "ironbackend-monorepo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Backend Architecture Intelligence for AI Coding Assistants",
   "author": "IronBackend Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ironbackend/ironbackend.git"
+    "url": "https://github.com/txqt/IronBackend.git"
   },
   "scripts": {
     "build": "pnpm -r build",
@@ -27,7 +27,7 @@
     "vitest": "^4.0.17"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.9.0",
     "pnpm": ">=8.0.0"
   },
   "packageManager": "pnpm@8.15.0"

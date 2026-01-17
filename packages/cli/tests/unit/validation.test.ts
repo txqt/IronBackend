@@ -3,6 +3,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
+import path from 'path';
 import {
     sanitizeFilePath,
     sanitizeInput,
@@ -14,12 +15,16 @@ import { ZodError } from 'zod';
 
 describe('validation utilities', () => {
     describe('sanitizeFilePath', () => {
-        const baseDir = 'C:\\Users\\test\\project';
+        // Use a platform-appropriate base directory
+        const baseDir = path.resolve(process.cwd(), 'test_project');
+        const isWindows = path.sep === '\\';
 
         it('should allow paths within base directory', () => {
             const result = sanitizeFilePath('src/index.ts', baseDir);
             expect(result).toContain('src');
             expect(result).toContain('index.ts');
+            // Check that it's a subpath of baseDir
+            expect(result.startsWith(baseDir)).toBe(true);
         });
 
         it('should reject path traversal attempts', () => {
@@ -28,7 +33,9 @@ describe('validation utilities', () => {
         });
 
         it('should reject absolute paths outside base', () => {
-            expect(() => sanitizeFilePath('D:\\other\\path', baseDir))
+            // Use a definitely different root/drive
+            const outsidePath = isWindows ? 'D:\\other\\path' : '/other/path';
+            expect(() => sanitizeFilePath(outsidePath, baseDir))
                 .toThrow('path traversal detected');
         });
 

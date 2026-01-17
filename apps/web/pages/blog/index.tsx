@@ -57,8 +57,18 @@ export async function getStaticProps() {
                 // Simple manual parsing of the export const meta object
                 // This avoids needing heavy dependencies like gray-matter or babel-parser for now
                 // since we know the exact format we are using.
+                // simple manual parsing of the export const meta object
                 const metaMatch = fileContent.match(/export const meta = ({[\s\S]*?})/);
-                let meta: any = {};
+
+                interface BlogMeta {
+                    title?: string;
+                    description?: string;
+                    date?: string;
+                    author?: string;
+                    [key: string]: unknown;
+                }
+
+                let meta: BlogMeta = {};
 
                 if (metaMatch && metaMatch[1]) {
                     try {

@@ -23,7 +23,7 @@ interface ArchitectureResult {
     description: string;
     pros: string[];
     cons: string[];
-    icon: any;
+    icon: React.ElementType;
 }
 
 const ARCHITECTURES: Record<ArchitectureType, ArchitectureResult> = {

@@ -1,6 +1,6 @@
 {
     "name": "@ironbackend/prompts",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "description": "AI prompt templates for IronBackend",
     "main": "./dist/index.js",
@@ -33,7 +33,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ironbackend/ironbackend.git",
+        "url": "https://github.com/txqt/IronBackend.git",
         "directory": "packages/prompts"
     },
     "dependencies": {

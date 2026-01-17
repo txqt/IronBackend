@@ -1,0 +1,15 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "include": [
+        ".vitepress/**/*.ts",
+        ".vitepress/**/*.mts",
+        "**/*.ts",
+        "**/*.mts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        ".vitepress/dist",
+        ".vitepress/cache"
+    ]
+}

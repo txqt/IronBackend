@@ -1,37 +1,21 @@
 <div align="center">
 
-  <h1>IronBackend</h1>
-  <p><strong>Backend Architecture Intelligence for AI Coding Assistants</strong></p>
+# IronBackend
 
-  <p>
-    <a href="https://ironbackend.dev">Website</a> •
-    <a href="https://ironbackend.dev/docs">Documentation</a> •
-    <a href="https://ironbackend.dev/blog">Blog</a> •
-    <a href="https://discord.gg/ironbackend">Community</a>
-  </p>
-  
-  <img src="https://img.shields.io/github/stars/ironbackend/ironbackend?style=social" />
-  <img src="https://img.shields.io/npm/dt/@ironbackend/cli" />
+![IronBackend Logo](./docs/assets/logo.png)
 
-  <br /> <br />
+**Backend Architecture Intelligence for AI Coding Assistants**
 
-  [![npm version](https://img.shields.io/npm/v/@ironbackend/cli)](https://www.npmjs.com/package/@ironbackend/cli)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-  
-  *A senior backend architect embedded inside your AI, installable via npm.*
+[![npm version](https://img.shields.io/npm/v/@ironbackend/cli)](https://www.npmjs.com/package/@ironbackend/cli)
+[![npm downloads cli](https://img.shields.io/npm/dm/@ironbackend/cli?label=cli%20downloads)](https://www.npmjs.com/package/@ironbackend/cli)
+[![npm downloads core](https://img.shields.io/npm/dm/@ironbackend/core?label=core%20downloads)](https://www.npmjs.com/package/@ironbackend/core)
+[![npm downloads prompts](https://img.shields.io/npm/dm/@ironbackend/prompts?label=prompts%20downloads)](https://www.npmjs.com/package/@ironbackend/prompts)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
+*A senior backend architect embedded inside your AI, installable via npm.*
 
 </div>
-
-## Used By
-
-<table>
-  <tr>
-    <td align="center"><strong>Startups</strong><br/>50+ early-stage startups</td>
-    <td align="center"><strong>Developers</strong><br/>1,200+ GitHub stars</td>
-    <td align="center"><strong>Companies</strong><br/>Featured in Y Combinator</td>
-  </tr>
-</table>
 
 ---
 

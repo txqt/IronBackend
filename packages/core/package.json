@@ -1,6 +1,6 @@
 {
     "name": "@ironbackend/core",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "description": "Backend architecture styles, rules, stacks, and security playbooks",
     "main": "./dist/index.js",
@@ -48,7 +48,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ironbackend/ironbackend.git",
+        "url": "https://github.com/txqt/IronBackend.git",
         "directory": "packages/core"
     },
     "dependencies": {

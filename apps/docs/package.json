@@ -2,6 +2,11 @@
     "name": "docs",
     "version": "1.0.0",
     "description": "IronBackend Documentation",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/txqt/IronBackend.git",
+        "directory": "apps/docs"
+    },
     "main": "index.js",
     "type": "module",
     "scripts": {

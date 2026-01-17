@@ -28,4 +28,4 @@ Instructions for writing unit and integration tests using Vitest.
 ## Customizing Prompts
 
 You can generate custom prompts using our interactive tool:
-[**Launch Prompt Generator**](/tools/prompt-generator)
+*(Prompt Generator tool coming soon)*
