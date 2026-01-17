@@ -79,7 +79,7 @@ Available levels: `trace`, `debug`, `info`, `warn`, `error`, `fatal`
 
 If you encounter an issue not listed here:
 
-1. Check the [GitHub Issues](https://github.com/ironbackend/ironbackend/issues)
+1. Please open an issue on [GitHub](https://github.com/txqt/IronBackend/issues) with:
 2. Search existing issues for your error message
 3. Open a new issue with:
    - IronBackend version (`ironbackend --version`)

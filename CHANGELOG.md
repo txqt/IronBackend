@@ -68,5 +68,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Getting started guide
 - Contributing guidelines
 
-[Unreleased]: https://github.com/ironbackend/ironbackend/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/txqt/IronBackend/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ironbackend/ironbackend/releases/tag/v1.0.0

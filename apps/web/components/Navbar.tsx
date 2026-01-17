@@ -65,7 +65,7 @@ export default function Navbar() {
                     <div className="flex items-center">
                         {/* Initial CTA or placeholder for auth/search */}
                         <a
-                            href="https://github.com/ironbackend/ironbackend"
+                            href="https://github.com/txqt/IronBackend"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm font-medium text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"

@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: View on GitHub
-      link: https://github.com/ironbackend/ironbackend
+      link: https://github.com/txqt/IronBackend
 
 features:
   - title: Clean Architecture

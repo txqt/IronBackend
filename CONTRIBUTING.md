@@ -30,7 +30,7 @@ Add support for new AI coding assistants:
 
 ```bash
 # Clone repository
-git clone https://github.com/ironbackend/ironbackend.git
+git clone https://github.com/txqt/IronBackend.git
 cd ironbackend
 
 # Install dependencies

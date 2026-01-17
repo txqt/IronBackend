@@ -11,7 +11,7 @@
     "excludeExternals": true,
     "includeVersion": true,
     "navigationLinks": {
-        "GitHub": "https://github.com/ironbackend/ironbackend",
+        "GitHub": "https://github.com/txqt/IronBackend",
         "npm": "https://www.npmjs.com/package/ironbackend"
     },
     "plugin": [

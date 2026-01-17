@@ -1,6 +1,6 @@
 {
   "name": "ironbackend-monorepo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Backend Architecture Intelligence for AI Coding Assistants",
   "author": "IronBackend Contributors",

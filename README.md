@@ -255,6 +255,6 @@ MIT License - see [LICENSE](./LICENSE)
 
 **IronBackend** — *A senior backend architect in your AI, installable via npm.*
 
-[Documentation](./docs) · [Examples](./examples) · [GitHub](https://github.com/ironbackend/ironbackend)
+[Documentation](./docs) · [Examples](./examples) · [GitHub](https://github.com/txqt/IronBackend)
 
 </div>

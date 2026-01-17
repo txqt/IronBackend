@@ -71,7 +71,7 @@ export default function Home() {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
           <a
-            href="https://github.com/ironbackend/ironbackend"
+            href="https://github.com/txqt/IronBackend"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-900 transition-all hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
