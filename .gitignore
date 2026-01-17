@@ -30,3 +30,7 @@ pnpm-debug.log*
 
 # IronBackend generated
 .ironbackend/
+
+# Agent and Shared
+.agent/
+.shared/
