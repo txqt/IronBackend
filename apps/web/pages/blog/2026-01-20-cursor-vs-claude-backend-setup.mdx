@@ -1,0 +1,83 @@
+import BlogLayout from '../../components/BlogLayout';
+
+export const meta = {
+  title: 'Cursor vs Claude: Which AI Assistant is Better for Backend?',
+  date: '2026-01-20',
+  description: 'A deep dive into setting up Cursor and Claude for backend development. We analyze their strengths, weaknesses, and how to configure them for production.',
+  author: 'IronBackend Team'
+}
+
+export default ({ children }) => <BlogLayout>{children}</BlogLayout>;
+
+# Cursor vs Claude: Which AI Assistant is Better for Backend?
+
+*January 20, 2026 • IronBackend Team*
+
+The battle of the AI coding assistants is heating up. **Cursor** has taken the developer world by storm with its VS Code fork, while **Claude** continues to impress with its reasoning capabilities.
+
+But for *backend engineers*, the requirements are different. We care less about CSS generation and more about:
+1.  **Context Management:** Can it understand my 50-file microservice?
+2.  **Architectural Integrity:** Will it respect my Clean Architecture boundaries?
+3.  **Security:** Will it spot SQL injections before I do?
+
+## The Comparison
+
+### Cursor: The Integrated Powerhouse
+
+Cursor's biggest strength is its `@Codebase` indexing. It can see your entire project.
+
+**Pros:**
+-   **Deep Context:** Knows your `tsconfig.json` without you pasting it.
+-   **Rules System:** The `.cursor/rules` folder is a game-changer for enforcing patterns.
+-   **Inline Edits:** `Cmd+K` is incredibly fast for refactoring.
+
+**Cons:**
+-   Can get confused with very large monorepos (though improving).
+
+### Claude: The Reasoning Engine
+
+Claude (specifically 3.5 Sonnet) shines when you need to design complex systems.
+
+**Pros:**
+-   **Superior Architecture Logic:** Ask it to design a "distributed lock system with Redis" and it will outline edge cases Cursor might miss.
+-   **Refactoring:** Better at large-scale refactors where understanding "intent" is key.
+
+**Cons:**
+-   **Context Switching:** Copy-pasting files into the chat window is friction.
+
+## How to Configure Them for Backend
+
+The secret is to not rely on their defaults. You must "prime" them with your architectural standards.
+
+### Setting up Cursor
+
+Create a `.cursor/rules/backend.mdc` file:
+
+```markdown
+# Backend Rules
+
+- You are an expert in NestJS and Hexagonal Architecture.
+- NEVER put business logic in controllers.
+- ALWAYS use DTOs for input validation.
+- Handle errors with custom exceptions, never raw 500s.
+```
+
+*(IronBackend can generate this for you automatically)*
+
+### Setting up Claude
+
+Since Claude doesn't have a file-based rule system yet (unless using specific CLI tools), you should use a **System Prompt**.
+
+Start every serious backend session with:
+
+> "Act as a Senior Backend Architect. We use modular monolith architecture. Before generating code, review these constraints..."
+
+## Conclusion
+
+**Use Cursor for Implementation.** The speed and IDE integration are unbeatable for writing code.
+
+**Use Claude for Design.** when you need to plan a new feature or debug a complex race condition, switch to Claude.
+
+---
+
+*Want to configure both tools automatically? [Try IronBackend's CLI](/docs)*

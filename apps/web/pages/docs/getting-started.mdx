@@ -1,0 +1,54 @@
+import DocsLayout from '../../components/DocsLayout';
+import { components } from '../../components/mdx-components';
+
+export default function Page({ children }) {
+  return (
+    <DocsLayout>
+      <div className="prose prose-slate dark:prose-invert max-w-none">
+        {children}
+      </div>
+    </DocsLayout>
+  );
+}
+
+export { components };
+
+# Getting Started
+
+Welcome to **IronBackend**, the open-source backend architecture intelligence for AI coding assistants.
+
+IronBackend helps you and your AI assistant (Cursor, GitHub Copilot, Claude) write **production-grade** backend code by providing standardized architecture patterns, design rules, and validation tools.
+
+## Why IronBackend?
+
+AI coding assistants are powerful, but they often default to "spaghetti code" or simple MVC patterns that don't scale. IronBackend provides the **context** your AI needs to build standard, maintainable systems.
+
+-   **Clean Architecture**: Enforce boundaries between domain, application, and infrastructure layers.
+-   **AI-Native Rules**: optimised `.cursor/rules` files that LLMs understand perfectly.
+-   **Production Ready**: Security patterns, Zod validation, and error handling baked in.
+
+## Installation
+
+You can use the IronBackend CLI to bootstrap a new project or add it to an existing one.
+
+```bash
+# Install the CLI globally
+npm install -g ironbackend
+
+# Create a new project
+ironbackend init my-new-project
+```
+
+## Quick Start Guide
+
+1.  **Initialize**: Run the init command and select your preferred architecture (e.g., Modular Monolith).
+2.  **Generate**: Use the CLI to scaffold new modules or features.
+    ```bash
+    ironbackend generate module users
+    ```
+3.  **Code**: Open Cursor or your favorite editor. The `.cursor/rules` will automatically guide the AI to follow the project structure.
+
+## Next Steps
+
+-   Explore [Architecture Styles](/docs/architecture-styles) to choose the right pattern.
+-   Check out the [Design Rules](/docs/design-rules) to understand the core principles.

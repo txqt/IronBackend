@@ -1,0 +1,70 @@
+import BlogLayout from '../../components/BlogLayout';
+
+export const meta = {
+  title: 'Why AI Coding Assistants Fail at Backend Architecture',
+  date: '2026-01-15',
+  description: 'AI tools like GitHub Copilot and Cursor are great at syntax, but struggle with system design. Here is why and how to fix it.',
+  author: 'IronBackend Team'
+}
+
+export default ({ children }) => <BlogLayout>{children}</BlogLayout>;
+
+# Why AI Coding Assistants Fail at Backend Architecture
+
+*January 15, 2026 • IronBackend Team*
+
+We all love **Cursor**, **GitHub Copilot**, and **Claude**. They speed up development significantly. But if you have ever asked them to "generate a backend for a user management system," you probably noticed a pattern: **they default to the simplest, often naive, implementation.**
+
+## The "Tutorial Code" Problem
+
+AI models are trained on billions of lines of code. Unfortunately, a vast majority of public code (especially effectively tagged or accessible code) comes from:
+
+1.  Tutorials ("Build a Todo App in 10 minutes")
+2.  Hackathon projects
+3.  Prototypes
+
+This means the AI is heavily biased towards **"getting it working"** rather than **"making it maintainable."**
+
+## Common Architectural Failures
+
+### 1. The God Controller
+AI loves putting business logic directly into HTTP route handlers.
+
+```typescript
+// Copilot often suggests this:
+app.post('/users', async (req, res) => {
+  const user = await db.users.create(req.body); // Direct DB access?
+  if (user.age < 18) throw new Error("Too young"); // Business logic in controller?
+  await emailService.sendWelcome(user.email); // Mixed concerns?
+  res.json(user);
+});
+```
+
+### 2. Leaky Abstractions
+It will often pass ORM entities directly to the frontend, exposing your database schema and internal fields.
+
+### 3. Missing Error Handling
+"Happy path" coding is the default. Try/catch blocks, custom error types, and logging are often afterthoughts.
+
+## How to Fix It
+
+You don't need to retrain the model. You need to **provide context**.
+
+### Context Injection
+
+If you tell the AI *expected* patterns before it generates code, it performs much better. This is where **IronBackend** comes in.
+
+By initializing your workspace with specific architectural rules:
+
+```bash
+npx @ironbackend/cli init cursor --style hexagonal --stack node-nestjs
+```
+
+You are effectively telling the AI:
+> "We are using Hexagonal Architecture. Domain entities must not depend on database annotations. All business logic must exist in the application layer, not controllers."
+
+With these constraints, the AI shifts from "Tutorial Mode" to "Senior Engineer Mode", generating code that fits your long-term goals.
+
+---
+
+*Ready to upgrade your AI's architectural IQ? [Get Started with IronBackend](/docs)*

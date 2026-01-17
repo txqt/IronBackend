@@ -1,0 +1,50 @@
+import DocsLayout from '../../../components/DocsLayout';
+import { components } from '../../../components/mdx-components';
+
+export default function Page({ children }) {
+  return (
+    <DocsLayout>
+      <div className="prose prose-slate dark:prose-invert max-w-none">
+        {children}
+      </div>
+    </DocsLayout>
+  );
+}
+
+export { components };
+
+# Architecture Styles
+
+IronBackend supports multiple architecture patterns, allowing you to choose the level of complexity that fits your team and project size.
+
+## Supported Patterns
+
+### 1. Layered Monolith
+
+**Best for**: Small teams (1-3 devs), MVPs, simple CRUD apps.
+
+A traditional layered architecture where code is organized by technical function (Controllers, Services, Repositories).
+-   **Pros**: Simple to set up, easy to test locally.
+-   **Cons**: Can become a "big ball of mud" if not disciplined.
+
+### 2. Modular Monolith
+
+**Best for**: Medium teams (4-10 devs), scaling startups, complex domains.
+
+A single deployment unit where code is organized by **Domain Modules** (e.g., `UserModule`, `OrderModule`, `PaymentModule`). Each module has its own internal architecture and strict public API.
+-   **Pros**: Excellent boundaries, easy to extract services later, type safety.
+-   **Cons**: Requires strict enforcement of module dependencies.
+
+### 3. Microservices
+
+**Best for**: Large teams (10+ devs), hyper-scale, independent deployments.
+
+Fully independent services communicating over the network (gRPC, REST, RabbitMQ).
+-   **Pros**: Independent scaling, fault isolation, technology freedom.
+-   **Cons**: High operational complexity, distributed data issues, network latency.
+
+## Choosing the Right Style
+
+Not sure which one to pick? Use our interactive tool to find your match.
+
+[**Launch Architecture Selector**](/tools/architecture-selector)

@@ -1,0 +1,60 @@
+import Head from 'next/head';
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Hexagonal Architecture in Backend Development",
+      "description": "A complete guide to Hexagonal Architecture (Ports and Adapters) for modern backend systems.",
+      "articleSection": "Software Architecture",
+      "keywords": "hexagonal architecture, ports and adapters, clean architecture, backend patterns",
+      "author": {
+        "@type": "Organization",
+        "name": "IronBackend"
+      }
+    })}
+  </script>
+</Head>
+
+# Hexagonal Architecture
+
+Hexagonal architecture, also known as **Ports and Adapters**, is a pattern that isolates the core application (domain) from external concerns like databases, user interfaces, or third-party APIs.
+
+## When to Use
+
+-   **Complex Domain Logic:** Systems where the core business rules are complex and need to be tested in isolation.
+-   **Long-Lived Applications:** Projects expected to evolve over years, where technology choices (databases, frameworks) might change.
+-   **Test-Driven Development (TDD):** Enables writing tests for the core logic without mocking heavy external dependencies.
+
+## Key Concepts
+
+1.  **Domain:** The heart of the application. Contains entities, value objects, and business rules. No external dependencies.
+2.  **Ports:** Interfaces that define how the outside world interacts with the application (Driving Ports) and how the application interacts with external systems (Driven Ports).
+3.  **Adapters:** Implementations of the ports. For example, a REST controller (Driving Adapter) or a Postgres repository (Driven Adapter).
+
+## Example Structure (NestJS)
+
+```typescript
+src/
+  domain/                 # The hexagon core
+    model/
+    ports/
+      in/                 # Use cases / Services interfaces
+      out/                # Repository / External Service interfaces
+  application/            # Orchestration layer
+    services/
+  adapters/               # The outside world
+    in/
+      web/                # Controllers
+    out/
+      persistence/        # Database repositories
+```
+
+## IronBackend Support
+
+IronBackend can configure your AI assistant to strictly follow this structure:
+
+```bash
+npx @ironbackend/cli init cursor --style hexagonal
+```

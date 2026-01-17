@@ -1,0 +1,19 @@
+{
+    "name": "docs",
+    "version": "1.0.0",
+    "description": "IronBackend Documentation",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev",
+        "build": "vitepress build",
+        "preview": "vitepress preview"
+    },
+    "dependencies": {
+        "vue": "^3.4.0",
+        "vitepress": "^1.0.0-rc.31"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0"
+    }
+}
